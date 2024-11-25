@@ -1,0 +1,44 @@
+<form [formGroup]="addEmployeeForm">
+  <h3 class="sub-heading">Add Employee</h3>
+  <mat-card>
+    <div fxLayout="row" fxFlex="100" fxLayoutGap="15">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>First Name</mat-label>
+        <input formControlName="firstname" type="text" matInput />
+
+        <mat-error
+          *ngIf="this.addEmployeeForm.get('firstname')?.hasError('required')"
+        >
+          Firstname is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Last Name</mat-label>
+        <input formControlName="lastname" type="text" matInput />
+        <mat-error *ngIf="this.addEmployeeForm.get('lastname')?.touched">
+          Lastname is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Email Name</mat-label>
+        <input formControlName="emailId" type="text" matInput />
+        <mat-error
+          *ngIf="this.addEmployeeForm.get('emailId')?.hasError('required')"
+        >
+          Email is required
+        </mat-error>
+        <mat-error
+          *ngIf="this.addEmployeeForm.get('email')?.hasError('pattern')"
+        >
+          Enter the valid email
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxLayoutAlign="end center" class="submit">
+      <button type="button" class="btn btn-success" (click)="submitEmployee()">
+        Submit
+      </button>
+    </div>
+  </mat-card>
+</form>

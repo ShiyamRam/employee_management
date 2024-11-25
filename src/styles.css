@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: bisque;
+  text-align: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-mdc-text-field-wrapper {
+  height: 45px !important;
+  display: flex;
+  align-items: center;
+}
+
+.mat-mdc-form-field-error {
+  font-size: 12px;
+}
+
+.mat-mdc-form-field:not(.mat-form-field-disabled)
+  .mat-mdc-floating-label.mdc-floating-label {
+  cursor: inherit;
+  position: absolute;
+  top: 22px;
+  left: 18px;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  background: linear-gradient(to top, #4e99ffed 0%, #8accff 100%);
+}
